@@ -1,12 +1,12 @@
 ﻿open System
 
-type Name = Name of string
-type Department = Department of string
+type Name = string
+type Department = string
 type Periodicity = Monthly | Yearly
-type StartDate = StartDate of DateOnly
-type Cost = Cost of int
+type StartDate = DateOnly
+type Cost = int
 
-type LicenseId = LicenseId of int
+type LicenseId = int
 
 type License =
     {
@@ -19,7 +19,7 @@ type License =
     }
 
 
-type SubscribedSoftwares = SubscribedSoftwares of ResizeArray<_>
+//type SubscribedSoftwares = ResizeArray<_>
 
 let adobe : License =
     {
@@ -27,7 +27,7 @@ let adobe : License =
         Name = "Adobe CC"
         Department = "MCC"
         Billing = Yearly
-        StartedOn = (2024, 08, 30)
+        StartedOn = new StartDate(2024, 08, 30)
         Price = 1200000
     }
 
