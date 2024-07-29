@@ -1,22 +1,5 @@
-﻿open System
+﻿open SoftwareLicense
 
-type Name = string
-type Department = string
-type Periodicity = Monthly | Yearly
-type StartDate = DateOnly
-type Cost = int
-
-type LicenseId = int
-
-type License =
-    {
-        Id : LicenseId
-        Name : Name
-        Department : Department
-        Billing : Periodicity
-        StartedOn : StartDate
-        Price : Cost
-    }
 
 
 //type SubscribedSoftwares = ResizeArray<_>
@@ -32,5 +15,14 @@ let adobe : License =
     }
 
 
+let newAdobe =
+    {
+        adobe with
+            StartedOn = new StartDate(2025, 08, 30)
+
+    }
+
 // For more information see https://aka.ms/fsharp-console-apps
 printfn $"Software product: {adobe}"
+
+printfn $"Adobe license has been renewed.\n {newAdobe}"
